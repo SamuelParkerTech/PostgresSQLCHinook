@@ -2,8 +2,9 @@
 
 Welcome Samuel Parker,
 
+Postgres Database Project/Learning Example. 
 
-
+LMS does not mention some of the following that needs to be done EVERY time you load your workspace (Thanks to Barrie for the scripts). 
 
 Quirks
 
