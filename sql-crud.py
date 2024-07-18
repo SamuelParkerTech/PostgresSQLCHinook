@@ -3,7 +3,8 @@ from sqlalchemy import (
 )
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-
+from sqlalchemy.util import deprecations
+deprecations.SILENCE_UBER_WARNING = True
 
 # executing the instructions from the "chinook" database
 db = create_engine("postgresql:///chinook")
@@ -103,6 +104,9 @@ samuel_parker = Programmer(
 #programmer = session.query(Programmer).filter_by(id=9).first()
 #programmer.famous_for = "Emperor of the Sol System"
 
+# commit our session to the database
+session.commit()
+
 # Updating multiple records 
 #people = session.query(Programmer)
 #for person in people:
@@ -137,11 +141,8 @@ samuel_parker = Programmer(
 #    session.delete(programmer)
 #    session.commit()
 
-# commit our session to the database
-#session.commit()
-
 # query the database to find all programmers
-programmers = session.query(Programmer)
+programmers = session.query(Programmer).all()
 for programmer in programmers:
         print(
             programmer.id,
@@ -150,5 +151,4 @@ for programmer in programmers:
             programmer.nationality,
             programmer.famous_for,
             sep=" | "
-
-    )
+            )
