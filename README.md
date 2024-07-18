@@ -7,7 +7,7 @@ Welcome Samuel Parker,
 
 Quirks
 
-I created this script to refill the database every time this happened so I could focus on the new coding. Seems some of you might be running into similiar issues, so here's the steps to do it.
+I created this script to refill the database every time this happened so I could focus on the new coding. Seems some of you might be running into similiar issues, so here's the steps to do it.\
 1 - Create a file called create-fill-database.sh and fill it with the following information (correction: I added the two new pip3 commands to load required modules too)
 pip3 install sqlalchemy==1.4.46
 pip3 install psycopg2
