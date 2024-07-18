@@ -17,14 +17,16 @@ psql -c "CREATE DATABASE chinook" \
 psql -d chinook -f Chinook_PostgreSql.sql \
 2 - Run the command - chmod 744 create-fill-database.sh \
 3 - Run ./create-fill-database.sh \
-4 - Run set_pg \
+4 - Run set_pg 
+
+
 If you aren't sure if you have the database already, you can use the following commands inside the psql program to check:- \
 \l - List the databases available, if chinook is there, you have it. \
 \dt - Display the tables in your current database, this is useful if you aren't sure if content is in your chinook database. You'll need to have \c chinook first to get into the chinook database (assuming you have it) \
-\c chinook - As mentioned above, this switches you to the chinook database \
+\c chinook - As mentioned above, this switches you to the chinook database 
 
 
-Add the following code to remove the warning re deprecation: \
+Add the following code to remove the warning re deprecation:
 
 from sqlalchemy.util import deprecations
 deprecations.SILENCE_UBER_WARNING = True
